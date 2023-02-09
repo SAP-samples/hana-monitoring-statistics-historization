@@ -15,7 +15,7 @@ import sys
 conn = dbapi.connect(key='')
 
 cursor = conn.cursor()
-sql_command = """SELECT * FROM SYS.M_DEV_JOBEX_THREADGROUPS WHERE PORT = 30003;"""
+sql_command = """SELECT * FROM SYS.M_DEV_JOBEX_THREADGROUPS WHERE PORT = '%';"""
 cursor.execute(sql_command)
 rows = cursor.fetchall()
 # Write SQL statement response to csv file

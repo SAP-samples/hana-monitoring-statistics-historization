@@ -32,7 +32,7 @@ sql_command = """SELECT
 FROM
 ( SELECT                        /* Modification section */
     '%' HOST,
-    '30003' PORT
+    '%' PORT
   FROM
     DUMMY
 ) BI,
