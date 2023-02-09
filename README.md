@@ -24,6 +24,28 @@ The repository contains a set of Python and Bash scripts that would help histori
 
 The scripts in this repository are intended to historize the SAP HANA monitoring views (SYS.M_) for which there are no historical monitoring views (SYS_STATISTICS.HOST). Every historization comes with a combination of two scripts (Bash and Python); the Bash script is the anchor script that calls the Python script under the hood.
 
+The bash script will take duration and interval specified by the user and run the respective SQL statement for each interval period up to the duration time. The output will be a csv file with the timestamp as its name in its suffix and the contents will be an aggregation of the output that was collected from the SQL statement over the duration period. New csv file created after maximum of 50K records.
+
+### Usage:
+
+To run task: \
+sh job_executors.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path to create csv file]
+sh jobex_threadgroups.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path where csv file should be created]
+
+E.g. 1 : To collect the statistics for next 24 hours every 1 second in the trace directory of tenant
+sh job_executors.sh 1 86400 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenant Name>\
+
+
+To background task: \
+sh job_executors.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path to create csv file] &
+sh jobex_threadgroups.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path where csv file should be created] &
+
+E.g. 2 : To collect the statistics for next 24 hours every 1 second in the trace directory of tenant in background mode
+sh job_executors.sh 1 86400 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenant Name>\ &
+
+Use command bg to view background tasks.
+
+
 ## Requirements
 
 ## Download and Installation
