@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Bash script to repeatedly run a query based on a speciied interval, for a specified amount of time. The output will be
+# Bash script to repeatedly run a query based on a specified interval, for a specified amount of time. The output will be
 # written to a csv file that will be created in the specified target path. The respective python file with the SQL
 # statement must be in the same directory as this file.
 
