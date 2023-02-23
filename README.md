@@ -1,24 +1,4 @@
-# SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
-
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
-
 # Monitoring Data Historization for SAP HANA
-<!-- Please include descriptive title -->
-
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
-
 ## Description
 The repository contains a set of Python and Bash scripts that would help historize SAP HANA monitoring statistics.
 
@@ -27,7 +7,6 @@ The scripts in this repository are intended to historize the SAP HANA monitoring
 The bash script will take duration and interval specified by the user and run the respective SQL statement for each interval period up to the duration time. The output will be a csv file with the timestamp as its name in its suffix and the contents will be an aggregation of the output that was collected from the SQL statement over the duration period. New csv file created after maximum of 50K records.
 
 ### Usage:
-
 To run task: \
 sh job_executors.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path to create csv file]
 sh jobex_threadgroups.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path where csv file should be created]
@@ -45,21 +24,21 @@ sh job_executors.sh 1 86400 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenan
 
 Use command bg to view background tasks.
 
-
 ## Requirements
+Tested with Python 3.8.12 and higher versions
+Tested with SAP HANA 2.0 revision 59 and higher versions
 
 ## Download and Installation
+1. The python script and bash script should be downloaded into the same folder. 
+2. The scripts are executed as SAP HANA <SID>ADM user. The <SID>ADM user should have the necessary permissions to write into and create the csv files in the folder where these scripts are downloaded to.
+3. In the python script, insert/change the database hdbuserstore key. The user maintained in the hdbuserstore key should have privileges: CATALOG_READ, SAP_INTERNAL_HANA_SUPPORT.
+4. In the python script, modify the host, and port numbers against which these scripts are executed.
 
 ## Known Issues
-<!-- You may simply state "No known issues. -->
+No known issues.
 
 ## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
-
-## Contributing
-If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
+This project is provided "as-is" and any bug reports are not guaranteed to be fixed.
 
 ## License
 Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
