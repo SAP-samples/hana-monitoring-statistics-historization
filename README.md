@@ -1,4 +1,5 @@
 # Monitoring Data Historization for SAP HANA
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/hana-monitoring-statistics-historization)](https://api.reuse.software/info/github.com/SAP-samples/hana-monitoring-statistics-historization)
 ## Description
 The repository contains a set of Python and Bash scripts that would help historize SAP HANA monitoring statistics.
 
