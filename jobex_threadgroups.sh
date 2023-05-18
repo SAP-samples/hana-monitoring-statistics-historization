@@ -72,7 +72,7 @@ do
         echo $header >> $fileDate
     fi
     # Run python script which contains the actual query
-    python jobex_threadgroups.sh $fileDate
+    python jobex_threadgroups.py $fileDate
     # If the python file does not execute successfully, the program will exit
     exit_status=$?
     if [ "${exit_status}" -ne 0 ];

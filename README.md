@@ -13,7 +13,7 @@ sh job_executors.sh [Time to execute script in seconds] [Interval time between e
 sh jobex_threadgroups.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path where csv file should be created]
 
 E.g. 1 : To collect the statistics for next 24 hours every 1 second in the trace directory of tenant
-sh job_executors.sh 1 86400 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenant Name>\
+sh job_executors.sh 86400 1 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenant Name>\
 
 
 To background task: \
@@ -21,7 +21,7 @@ sh job_executors.sh [Time to execute script in seconds] [Interval time between e
 sh jobex_threadgroups.sh [Time to execute script in seconds] [Interval time between each statement execution in seconds] [Target Path where csv file should be created] &
 
 E.g. 2 : To collect the statistics for next 24 hours every 1 second in the trace directory of tenant in background mode
-sh job_executors.sh 1 86400 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenant Name>\ &
+sh job_executors.sh 86400 1 \usr\sap\<SID>\HDB<instance ##>\<hostname>\DB_<Tenant Name>\ &
 
 Use command bg to view background tasks.
 
